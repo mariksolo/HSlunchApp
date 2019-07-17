@@ -1,22 +1,27 @@
 import React from "react";
-import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
-
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  TextInput,
+  Button
+} from "react-native";
 
 export default class Login extends React.Component {
-    state = { email: '', password: '', errorMessage: null }  
-    handleLogin = () => {
-        // TODO: Firebase stuff...
-        console.log('handleLogin')
-      }
+  state = { email: "", password: "", errorMessage: null };
+  handleLogin = () => {
+    // TODO: Firebase stuff...
+    console.log("handleLogin");
+  };
 
-    render() {
-        return (
-            <View>
+  render() {
+    return (
+      <View>
         <Text>Login</Text>
-        {this.state.errorMessage &&
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
+        {this.state.errorMessage && (
+          <Text style={{ color: "red" }}>{this.state.errorMessage}</Text>
+        )}
         <TextInput
           autoCapitalize="none"
           placeholder="Email"
@@ -33,9 +38,9 @@ export default class Login extends React.Component {
         <Button title="Login" onPress={this.handleLogin} />
         <Button
           title="Don't have an account? Sign Up"
-          onPress={() => this.props.navigation.navigate('SignUp')}
+          onPress={() => this.props.navigation.navigate('SignUpScreen')}
         />
       </View>
-        )
-    }
+    );
+  }
 }

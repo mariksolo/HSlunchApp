@@ -1,14 +1,20 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 //import firebase from 'expo-firebase-app';
 //import 'expo-firebase-database';firebase.database()
 //import firebase from 'react-native-firebase';
 
-import * as firebase from 'firebase';
-import 'firebase/firestore';
+import * as firebase from "firebase";
+import "firebase/firestore";
 
+// import the different screens
+import Loading from "./Loading";
+import SignUp from "./SignUp";
+import Login from "./Login";
+import Main from "./Main";
 
-
+//import { SwitchNavigator } from "react-navigation";
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from "react-navigation";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -23,19 +29,46 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
+
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+         <Text>Open up App.js to start working on your app!</Text>
+       </View>
+    );
+  }
+}
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: Main
+  }
+});
+
+const AuthNavigator = createStackNavigator({
+  LoginScreen: Login,
+  SignUpScreen: SignUp,
+  
+
+})
+
+export default createAppContainer(createSwitchNavigator(
+  {
+    AuthLoading: Loading,
+    App: AppNavigator,
+    Auth: AuthNavigator,
+  },
+  {
+    initialRouteName: 'AuthLoading',
+  }));
