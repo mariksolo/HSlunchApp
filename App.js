@@ -29,6 +29,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
