@@ -2,9 +2,7 @@ import React from "react";
 import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
 
 import * as firebase from "firebase";
-import "firebase/auth";
-
-
+// import "firebase/auth";
 
 export default class Loading extends React.Component {
 
