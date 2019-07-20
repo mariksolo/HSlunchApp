@@ -12,9 +12,11 @@ import Loading from "./Loading";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import Main from "./Main";
+import Cart from "./Cart";
+import MyOrders from "./MyOrders";
 
 //import { SwitchNavigator } from "react-navigation";
-import { createStackNavigator, createAppContainer, createSwitchNavigator } from "react-navigation";
+import { createBottomTabNavigator, createStackNavigator, createAppContainer, createSwitchNavigator } from "react-navigation";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -52,9 +54,15 @@ class App extends React.Component {
   }
 }
 
-const AppNavigator = createStackNavigator({
-  Home: {
+const AppNavigator = createBottomTabNavigator({
+  Restaurants: {
     screen: Main
+  },
+  "My Cart": {
+    screen: Cart
+  },
+  "My Orders": {
+    screen: MyOrders
   }
 });
 

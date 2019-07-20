@@ -12,7 +12,7 @@ export default class Main extends React.Component {
     const { currentUser } = this.state;
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Hi {currentUser && currentUser.email}!</Text>
+        <Text>These are your previous orders.</Text>
       </View>
     );
   }

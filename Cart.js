@@ -11,8 +11,8 @@ export default class Main extends React.Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Hi {currentUser && currentUser.email}!</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> 
+        <Text>This is your cart</Text>
       </View>
     );
   }
