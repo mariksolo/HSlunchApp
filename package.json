@@ -12,12 +12,15 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@shoutem/ui": "^0.24.1",
     "expo": "^33.0.0",
     "expo-firebase-app": "^2.0.0",
     "firebase": "^6.3.0",
+    "native-base": "^2.12.2",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-elements": "^1.1.0",
     "react-native-firebase": "~5.5.5",
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.11.1",
@@ -28,6 +31,5 @@
     "jest": "^24.8.0",
     "jest-expo": "^33.0.2"
   },
-  
   "private": true
 }
